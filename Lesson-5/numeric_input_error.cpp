@@ -16,8 +16,25 @@ int main(int argc, char* argv[])
         cout << "Divisor: ";
         cin >> Divisor;
 
-        float Result = (Dividend/Divisor);
-        cout << Result << endl;
+        if (!cin.fail())    // Divisor is a number
+        {
+            float Result = (Dividend/Divisor);
+            cout << Result << endl;
+        }
+        else    // Divisor is not a number
+        {
+            cerr << "Input error, not a number?" << endl;
+
+            cin.clear();    // Reset the input failure bits
+            // Eat the bad input so we can pause the program
+            char BadInput[5];   // Up to 5 characters
+            cin >> BadInput;
+
+            // See what was thrown away
+            cout << BadInput;
+
+            ReturnCode = 1;
+        };
     }
     else    // Dividend is not a number
     {
