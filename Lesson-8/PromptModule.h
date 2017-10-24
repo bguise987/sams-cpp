@@ -1,6 +1,9 @@
 #ifndef PromptModuleH
 #define PromptModuleH
 
-void PauseForUserAcknowledgement(void);
+namespace PauseModule
+{
+    void PauseForUserAcknowledgement(void);
+}
 
 #endif
