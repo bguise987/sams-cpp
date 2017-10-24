@@ -2,7 +2,7 @@
 
 #include "PromptModule.h"
 
-namespace PauseModule
+namespace SAMSPrompt
 {
 
     using namespace std;
