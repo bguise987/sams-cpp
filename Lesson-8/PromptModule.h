@@ -1,7 +1,7 @@
 #ifndef PromptModuleH
 #define PromptModuleH
 
-namespace PauseModule
+namespace SAMSPrompt
 {
     void PauseForUserAcknowledgement(void);
 }
