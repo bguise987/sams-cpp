@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
             SAMSErrorHandling::HandleNotANumberError();
         };
     }
-    while (SAMSPrompt::UserWantsToContinue("More Division? "));
+    while (SAMSPrompt::UserWantsToContinueYOrN("More Division? "));
 
     return 0;
 }
