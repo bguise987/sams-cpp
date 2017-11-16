@@ -43,7 +43,7 @@ namespace SAMSPrompt
                     (DoneCharacter == 'y')
                     ||
                     (DoneCharacter == 'n')
-                )
+                );
 
             if (InvalidCharacterWasEntered)
             {
