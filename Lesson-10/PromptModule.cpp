@@ -29,6 +29,7 @@ namespace SAMSPrompt
     bool UserWantsToContinueYOrN(const char *theThingWeAreDoing)
     {
         char DoneCharacter;
+        bool InvalidCharacterWasEntered = false;
 
         do
         {
@@ -36,28 +37,21 @@ namespace SAMSPrompt
 
             cin >> DoneCharacter;
 
-            if
-            (
+            InvalidCharacterWasEntered =
                 !
                 (
                     (DoneCharacter == 'y')
                     ||
                     (DoneCharacter == 'n')
                 )
-            )
+
+            if (InvalidCharacterWasEntered)
             {
                 cout << "...Error - " << "please ener \"y\" or \"n\"." << endl;
             };
         }
         while
-        (
-            !
-            (
-                (DoneCharacter == 'y')
-                ||
-                (DoneCharacter == 'n')
-            )
-        );
+        (InvalidCharacterWasEntered);
 
         return (DoneCharacter != 'n');
     }
