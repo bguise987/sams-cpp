@@ -1,5 +1,8 @@
 #include <iostream>
+#include <exception>
 #include "ErrorHandlingModule.h"
+
+using namespace std;
 
 namespace SAMSErrorHandling
 {
@@ -20,5 +23,11 @@ namespace SAMSErrorHandling
         cin >> BadInput;
 
         return 1;   // An error occurred
+    }
+
+    int HandleRuntimeError(runtime_error theRuntimeError) // Returns error code
+    {
+        cerr << theRuntimeError.what() << endl;
+        return 1;
     }
 }
