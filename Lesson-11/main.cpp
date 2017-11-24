@@ -5,29 +5,50 @@
 
 using namespace std;
 
-float GetDividend(void)
+char GetOperator(void)
 {
-    float Dividend = 0;
+    char Operator = 'c';
 
-    cout << "Dividend: ";
-    cin >> Dividend;
+    cout << "Operator: ";
+    cin >> Operator;
 
-    return Dividend;
+    return Operator;
 }
 
-float GetDivisor(void)
+float GetOperand(void)
 {
-    float Divisor = 1;
+    float Operand = 1;
 
-    cout << "Divisor: ";
-    cin >> Divisor;
+    cout << "Operand: ";
+    cin >> Operand;
 
-    return Divisor;
+    return Operand;
 }
 
-float Divide(const float theDividend, const float theDivisor)
+float Accumulate(const char theOperator, const float theOperand)
 {
-    return (theDividend/theDivisor);
+    static float myAccumulator = 0; // Initialized to 0 when the program starts
+
+    switch (theOperator)
+    {
+        case '+':
+            myAccumulator = myAccumulator + theOperand;
+            break;
+        case '-':
+            myAccumulator = myAccumulator - theOperand;
+            break;
+        case '*':
+            myAccumulator = myAccumulator * theOperand;
+            break;
+        case '/':
+            myAccumulator = myAccumulator / theOperand;
+            break;
+
+        default:
+            throw runtime_error("Error - Invalid operator");
+    }
+
+    return myAccumulator;
 }
 
 int main(int argc, char* argv[])
@@ -46,6 +67,10 @@ int main(int argc, char* argv[])
         catch (runtime_error RuntimeError)
         {
             SAMSErrorHandling::HandleRuntimeError(RuntimeError);
+        }
+        catch (...)
+        {
+            SAMSErrorHandling::HandleNotANumberError();
         };
     }
     while (SAMSPrompt::UserWantsToContinueYOrN("More? "));
