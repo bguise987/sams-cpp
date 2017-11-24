@@ -78,12 +78,7 @@ void Tape(const char theOperator, const float theOperand)
     }
     else    // Display the tape
     {
-        for
-            (
-                int Index = 0;
-                Index < myNumberOfEntries;
-                Index++
-            )
+        for (int Index = 0; Index < myNumberOfEntries; Index++)
         {
             cout << myOperator[Index] << "," << myOperand[Index] << endl;
         };
