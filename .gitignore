@@ -1,6 +1,15 @@
 
 # Created by https://www.gitignore.io/api/c++,linux,macos,windows
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+*/.vscode/*
+
 ### C++ ###
 # Prerequisites
 *.d
