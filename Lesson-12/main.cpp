@@ -43,10 +43,14 @@ float Accumulate(const char theOperator, const float theOperand)
         case '/':
             myAccumulator = myAccumulator / theOperand;
             break;
+        case '?':
+            break;
 
         default:
             throw runtime_error("Error - Invalid operator");
-    }
+    };
+
+    Tape(theOperator, theOperand);
 
     return myAccumulator;
 }
