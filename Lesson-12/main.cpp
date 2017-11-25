@@ -47,7 +47,7 @@ void Tape(const char theOperator, const float theOperand)
         }
         else    // About to overflow the array
         {
-            throw runtime_error[ccc]("Error - Out of room on the tape.");
+            throw runtime_error("Error - Out of room on the tape.");
         };
     }
     else    // Display the tape
