@@ -25,36 +25,6 @@ float GetOperand(void)
     return Operand;
 }
 
-float Accumulate(const char theOperator, const float theOperand)
-{
-    static float myAccumulator = 0; // Initialized to 0 when the program starts
-
-    switch (theOperator)
-    {
-        case '+':
-            myAccumulator = myAccumulator + theOperand;
-            break;
-        case '-':
-            myAccumulator = myAccumulator - theOperand;
-            break;
-        case '*':
-            myAccumulator = myAccumulator * theOperand;
-            break;
-        case '/':
-            myAccumulator = myAccumulator / theOperand;
-            break;
-        case '?':
-            break;
-
-        default:
-            throw runtime_error("Error - Invalid operator");
-    };
-
-    Tape(theOperator, theOperand);
-
-    return myAccumulator;
-}
-
 void Tape(const char theOperator, const float theOperand)
 {
     static const int myTapeSize = 20;   // Array size
@@ -87,6 +57,36 @@ void Tape(const char theOperator, const float theOperand)
             cout << myOperator[Index] << "," << myOperand[Index] << endl;
         };
     };
+}
+
+float Accumulate(const char theOperator, const float theOperand)
+{
+    static float myAccumulator = 0; // Initialized to 0 when the program starts
+
+    switch (theOperator)
+    {
+        case '+':
+            myAccumulator = myAccumulator + theOperand;
+            break;
+        case '-':
+            myAccumulator = myAccumulator - theOperand;
+            break;
+        case '*':
+            myAccumulator = myAccumulator * theOperand;
+            break;
+        case '/':
+            myAccumulator = myAccumulator / theOperand;
+            break;
+        case '?':
+            break;
+
+        default:
+            throw runtime_error("Error - Invalid operator");
+    };
+
+    Tape(theOperator, theOperand);
+
+    return myAccumulator;
 }
 
 int main(int argc, char* argv[])
